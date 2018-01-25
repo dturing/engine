@@ -37,6 +37,8 @@ SemanticsUpdateBuilder::~SemanticsUpdateBuilder() = default;
 void SemanticsUpdateBuilder::updateNode(int id,
                                         int flags,
                                         int actions,
+                                        int textSelectionBase,
+                                        int textSelectionExtent,
                                         double left,
                                         double top,
                                         double right,
@@ -53,6 +55,8 @@ void SemanticsUpdateBuilder::updateNode(int id,
   node.id = id;
   node.flags = flags;
   node.actions = actions;
+  node.textSelectionBase = textSelectionBase;
+  node.textSelectionExtent = textSelectionExtent;
   node.rect = SkRect::MakeLTRB(left, top, right, bottom);
   node.label = label;
   node.hint = hint;
